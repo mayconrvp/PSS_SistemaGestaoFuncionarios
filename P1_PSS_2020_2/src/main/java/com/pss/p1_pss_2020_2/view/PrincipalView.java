@@ -8,6 +8,7 @@ package com.pss.p1_pss_2020_2.view;
 import com.pss.p1_pss_2020_2.collection.FuncionarioCollection;
 import com.pss.p1_pss_2020_2.model.Funcionario;
 import com.pss.p1_pss_2020_2.presenter.BuscarFuncionarioPresenter;
+import com.pss.p1_pss_2020_2.presenter.CalcularSalarioPresenter;
 import com.pss.p1_pss_2020_2.presenter.FuncionarioPresenter;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -46,6 +47,7 @@ public class PrincipalView extends javax.swing.JFrame {
         mnNovoFuncionario = new javax.swing.JMenuItem();
         mnBuscarFuncionario = new javax.swing.JMenuItem();
         mnSalario = new javax.swing.JMenu();
+        mnCalculaSalario = new javax.swing.JMenuItem();
         mnFerramentas = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +104,20 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenuBar1.add(mnFuncionario);
 
         mnSalario.setText("Salario");
+        mnSalario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnSalarioActionPerformed(evt);
+            }
+        });
+
+        mnCalculaSalario.setText("Calcular salário");
+        mnCalculaSalario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnCalculaSalarioActionPerformed(evt);
+            }
+        });
+        mnSalario.add(mnCalculaSalario);
+
         jMenuBar1.add(mnSalario);
 
         mnFerramentas.setText("Ferramentas");
@@ -138,6 +154,14 @@ public class PrincipalView extends javax.swing.JFrame {
         BuscarFuncionarioPresenter.getInstance().getView().setVisible(true);
     }//GEN-LAST:event_mnBuscarFuncionarioActionPerformed
 
+    private void mnSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnSalarioActionPerformed
+        
+    }//GEN-LAST:event_mnSalarioActionPerformed
+
+    private void mnCalculaSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCalculaSalarioActionPerformed
+        CalcularSalarioPresenter.getInstance().getView().setVisible(true);
+    }//GEN-LAST:event_mnCalculaSalarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -149,6 +173,7 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JLabel lblQtd;
     private javax.swing.JLabel lblQtdFuncionarios;
     private javax.swing.JMenuItem mnBuscarFuncionario;
+    private javax.swing.JMenuItem mnCalculaSalario;
     private javax.swing.JMenu mnFerramentas;
     private javax.swing.JMenu mnFuncionario;
     private javax.swing.JMenuItem mnNovoFuncionario;

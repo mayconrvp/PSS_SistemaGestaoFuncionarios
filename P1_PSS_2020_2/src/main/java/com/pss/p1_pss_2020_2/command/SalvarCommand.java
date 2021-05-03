@@ -40,10 +40,6 @@ public class SalvarCommand extends Command{
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro ao salvar", 0);
             
         }
-        //System.out.println(funcionarios.getFuncionarios().get(0).getNome());
-            // Funcionario(String nome, String cargo, String idade, int faltas, boolean funcionarioMes, String tipoBonus, double SalarioBase, String admissao) 
-        
-        
     }
     
 }

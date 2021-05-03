@@ -9,11 +9,7 @@ import com.pss.p1_pss_2020_2.collection.FuncionarioCollection;
 import com.pss.p1_pss_2020_2.model.Funcionario;
 import com.pss.p1_pss_2020_2.model.Observer;
 import com.pss.p1_pss_2020_2.view.BuscarFuncionarioView;
-import static java.lang.String.format;
-import static java.lang.String.format;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -46,13 +42,13 @@ public class BuscarFuncionarioPresenter implements Observer{
     
     
     public void gerarTabela(){
-        tmFuncionarios = (DefaultTableModel) view.getTbFuncionarios().getModel();
-//        tmFuncionarios = new DefaultTableModel(
-//            new Object[][][][]{},
-//            new String[]{
-//               "Nome", "Idade", "Função", "Salário Base"
-//            }
-//        );
+        //tmFuncionarios = (DefaultTableModel) view.getTbFuncionarios().getModel();
+        tmFuncionarios = new DefaultTableModel(
+            new Object[][][][]{},
+            new String[]{
+               "Nome", "Idade", "Função", "Salário Base"
+            }
+        );
         view.getTbFuncionarios().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tmFuncionarios.setNumRows(0);
         view.getTbFuncionarios().setModel(tmFuncionarios);
