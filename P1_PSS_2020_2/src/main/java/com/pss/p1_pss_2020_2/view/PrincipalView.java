@@ -8,6 +8,7 @@ package com.pss.p1_pss_2020_2.view;
 import com.pss.p1_pss_2020_2.collection.FuncionarioCollection;
 import com.pss.p1_pss_2020_2.model.Funcionario;
 import com.pss.p1_pss_2020_2.presenter.BuscarFuncionarioPresenter;
+import com.pss.p1_pss_2020_2.presenter.BuscarFuncionarioPresenter;
 import com.pss.p1_pss_2020_2.presenter.CalcularSalarioPresenter;
 import com.pss.p1_pss_2020_2.presenter.FuncionarioPresenter;
 import javax.swing.JLabel;
@@ -19,7 +20,7 @@ import javax.swing.JTextField;
  */
 public class PrincipalView extends javax.swing.JFrame {
     private Funcionario funcionario;
-    private FuncionarioCollection funcionarios;
+    private FuncionarioCollection funcionarios = FuncionarioCollection.getInstance();
 
     /**
      * Creates new form PrincipalView
@@ -151,7 +152,7 @@ public class PrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_mnNovoFuncionarioActionPerformed
 
     private void mnBuscarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnBuscarFuncionarioActionPerformed
-        BuscarFuncionarioPresenter.getInstance().getView().setVisible(true);
+        BuscarFuncionarioView.getInstance();
     }//GEN-LAST:event_mnBuscarFuncionarioActionPerformed
 
     private void mnSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnSalarioActionPerformed

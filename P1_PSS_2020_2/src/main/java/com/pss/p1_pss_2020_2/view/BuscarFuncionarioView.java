@@ -15,12 +15,22 @@ import javax.swing.JTextField;
  */
 public class BuscarFuncionarioView extends javax.swing.JFrame {
 
+    private static BuscarFuncionarioView instance;
     /**
      * Creates new form BuscarFuncionarioView
      */
-    public BuscarFuncionarioView() {
+    private BuscarFuncionarioView() {
         initComponents();
         setLocationRelativeTo(this.getParent());
+    }
+    
+    public static BuscarFuncionarioView getInstance(){
+        if(instance == null){
+            instance = new BuscarFuncionarioView();
+        }else{
+            instance.setVisible(true);
+        }
+        return instance;
     }
 
     /**

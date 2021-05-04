@@ -13,14 +13,36 @@ import com.pss.p1_pss_2020_2.view.PrincipalView;
  * @author mayco
  */
 public class PrincipalPresenter {
-    public static void main(String[] args) {
-        BuscarFuncionarioPresenter obs1 = new BuscarFuncionarioPresenter();
-        obs1.getView().setVisible(false);
-        PrincipalView view = new PrincipalView();
-        QuantidadeFuncionariosPresenter obs2 = new QuantidadeFuncionariosPresenter(view);
+    
+    
+    private static PrincipalPresenter instance = null;
+    private PrincipalView view;
+    private FuncionarioCollection funcionarios;
+    
+    
+    PrincipalPresenter(){
+        view = new PrincipalView();
+        funcionarios = FuncionarioCollection.getInstance();
+        registrarObservadores();
         
-        FuncionarioCollection funcionarios = FuncionarioCollection.getInstance();
-        funcionarios.registrarObservador(obs1);
-        funcionarios.registrarObservador(obs2);
-    }    
+    }
+    
+    public static PrincipalPresenter getInstance() throws Exception {
+        if (instance == null) {
+            instance = new PrincipalPresenter();
+        }
+        return instance;
+    }
+    
+    public void registrarObservadores(){
+         BuscarFuncionarioPresenter obs1 = new BuscarFuncionarioPresenter(funcionarios);
+         QuantidadeFuncionariosPresenter obs2 = new QuantidadeFuncionariosPresenter(view);
+         obs1.getView().setVisible(false);
+         funcionarios.registrarObservador(obs1);
+         funcionarios.registrarObservador(obs2);
+    }
+
+    public PrincipalView getView() {
+        return view;
+    }
 }

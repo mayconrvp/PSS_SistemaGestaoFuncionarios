@@ -17,12 +17,12 @@ import javax.swing.JOptionPane;
  */
 public class VisualizacaoState extends FuncionarioPresenterState{
     
-    private FuncionarioCollection funcionario;
+    private FuncionarioCollection funcionarios;
     
 
     public VisualizacaoState(FuncionarioPresenter presenter) {
         super(presenter);
-        this.funcionario = FuncionarioCollection.getInstance();
+        this.funcionarios = FuncionarioCollection.getInstance();
         
         configuracaoListeners(presenter);
         presenter.getView().setTitle("Visualizar Funcionario");
@@ -69,6 +69,10 @@ public class VisualizacaoState extends FuncionarioPresenterState{
                 cancelar();
             }
         });
+    }
+    
+    public void editar(){
+        
     }
 
 }
